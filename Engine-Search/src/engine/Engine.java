@@ -2,6 +2,8 @@ package engine;
 
 import java.util.List;
 
+import entry.EntryRegistry;
+
 public class Engine {
     
     private List<String> words;
@@ -41,6 +43,14 @@ public class Engine {
     protected void setExactness(double exactness)
     {
             this.exactness=exactness;
+    }
+
+    public void getEngineSearchResult(String query,EntryRegistry entryRegistry) {
+        // TODO calculate the lethvian distance
+        
+
+        
+        
     }
 
 
