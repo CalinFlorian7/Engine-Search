@@ -33,7 +33,7 @@ similarityProcentage=0;
     @Override
     public String toString() {
        
-        return "Title: "+title+"Distance"+levenstheinDistance +" Similarity: "+similarityProcentage;
+        return "Title: "+title+" Distance "+levenstheinDistance +" Similitarity: "+similarityProcentage;
     }
 
 

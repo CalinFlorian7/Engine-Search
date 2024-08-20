@@ -1,5 +1,6 @@
 package result;
 import java.util.*;
+import utils.PriorityQueueToList;
 public class ResultSet {
     private PriorityQueue<Result> queryResults;
     private int numberOfResults;
@@ -28,23 +29,35 @@ public class ResultSet {
             }
         }
     }
-    public void printResults()
+    public void printResultsInReversedOrder()
     {
         if(queryResults.isEmpty())
         {
-            System.out.println("No results found");
+            System.out.println("No results available");
         }
-        else
-        {
-        while(!queryResults.isEmpty())
-        {
-            System.out.println(queryResults.poll().toString());
-        }
+     else
+     {
+        
+        List<Result> results = PriorityQueueToList.convertPriorityQueueToList(queryResults);
+        Collections.reverse(results);
+        // for (Result result : results) {
+        //     System.out.println(result.toString());
+        // }
+        // Collections.reverse(results);
+        // for (Result result : results) {
+        //     System.out.println(result.toString());
+     }
+     }
+
+        // while(!queryResults.isEmpty())
+        // {
+        //     System.out.println(queryResults.poll().toString());
+        // }
     }
-    }
+    
 
 
     
 
     
-}
+
