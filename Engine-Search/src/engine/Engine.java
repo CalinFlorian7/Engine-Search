@@ -52,8 +52,6 @@ public void getEngineSearchResult(String query, EntryRegistry entryRegistry) {
         ResultSet resultSet =new ResultSet(10);
   for (Entry entry : entryRegistry.getEntryRegistry())
   {
-//         ResultFacade resultFacade = new ResultFacade(entry.getEntryName());
-//        Result result= resultFacade.calculateLevenshteinDistanceAndPercentage(query, entry.getEntryName());
 Result result=new Result(entry.getEntryName());
 result.levenstheinDistanceResult(query, entry.getEntryName());
 result.similarityPercentageResult(query, entry.getEntryName());
@@ -61,7 +59,7 @@ resultSet.addResult(result);
   
 
 
-}resultSet.printResults();
+}resultSet.printResultsInReversedOrder();
 }
 
 
