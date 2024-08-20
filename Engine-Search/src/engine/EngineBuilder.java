@@ -4,6 +4,10 @@ import java.util.List;
 
 public class EngineBuilder implements Builder {
     private Engine engine;
+    public EngineBuilder()
+    {
+        engine = new Engine();
+    }
 
     @Override
     public Builder setWords(List<String> words) {
