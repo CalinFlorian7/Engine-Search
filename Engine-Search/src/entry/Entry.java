@@ -7,7 +7,9 @@ public class Entry {
 public Entry(String entryName) {
 this.entryName = entryName;
 }
-
+public String getEntryName() {
+return entryName;
+}
 public String toString() {
 
     return "Entry [entryName=" + entryName + "]";
