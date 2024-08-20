@@ -30,10 +30,17 @@ public class ResultSet {
     }
     public void printResults()
     {
+        if(queryResults.isEmpty())
+        {
+            System.out.println("No results found");
+        }
+        else
+        {
         while(!queryResults.isEmpty())
         {
             System.out.println(queryResults.poll().toString());
         }
+    }
     }
 
 
