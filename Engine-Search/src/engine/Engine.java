@@ -1,8 +1,11 @@
 package engine;
 
 import java.util.List;
-
+import entry.Entry;
+import result.Result;
+import result.ResultSet;
 import entry.EntryRegistry;
+import result.ResultFacade;
 
 public class Engine {
     
@@ -12,7 +15,7 @@ public class Engine {
     private List<String> attributes;
     private String sort;
     private double exactness;
-    protected Engine(){
+    public Engine(){
         this.words = null;
         this.typo = false;
         this.proximity = 0;
@@ -45,13 +48,21 @@ public class Engine {
             this.exactness=exactness;
     }
 
-    public void getEngineSearchResult(String query,EntryRegistry entryRegistry) {
-        // TODO calculate the lethvian distance
-        
+public void getEngineSearchResult(String query, EntryRegistry entryRegistry) {
+        ResultSet resultSet =new ResultSet(10);
+  for (Entry entry : entryRegistry.getEntryRegistry())
+  {
+//         ResultFacade resultFacade = new ResultFacade(entry.getEntryName());
+//        Result result= resultFacade.calculateLevenshteinDistanceAndPercentage(query, entry.getEntryName());
+Result result=new Result(entry.getEntryName());
+result.levenstheinDistanceResult(query, entry.getEntryName());
+result.similarityPercentageResult(query, entry.getEntryName());
+resultSet.addResult(result);
+  
 
-        
-        
-    }
+
+}resultSet.printResults();
+}
 
 
 
