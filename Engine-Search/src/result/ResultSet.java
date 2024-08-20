@@ -3,6 +3,10 @@ import java.util.*;
 public class ResultSet {
     private PriorityQueue<Result> queryResults;
     private int numberOfResults;
+    private ResultSet()
+    {
+        
+    }
     public ResultSet(int numberOfResults)
     {
         this.numberOfResults = numberOfResults;
