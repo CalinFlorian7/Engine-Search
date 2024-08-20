@@ -1,6 +1,6 @@
 package result;
 
-public class Result{
+public class Result implements Comparable<Result>{
     private String title;
     private int levenstheinDistance;
     private double similarityProcentage;
@@ -10,6 +10,7 @@ this.title=title;
 levenstheinDistance=0;
 similarityProcentage=0;
     }
+   
     public void LevenstheinDistanceResult(String query,String entry)
     {
        this.levenstheinDistance=algorithms.LevenshteinDistance.calculateLevenshteinDistance(query, entry);
@@ -17,6 +18,13 @@ similarityProcentage=0;
     public void similarityPercentageResult(String query,String entry)
     {
         this.similarityProcentage=algorithms.SimilarityPercentage.calculateSimilarityPercentage(query, entry, levenstheinDistance);
+    }
+
+    @Override
+    public int compareTo(Result o) {
+     
+        return Double.compare(this.similarityProcentage, o.similarityProcentage);
+
     }
 
 
