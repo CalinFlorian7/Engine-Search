@@ -1,7 +1,7 @@
 package algorithms;
 
 public class LevenshteinDistance {
-    public  int  calculateLevenshteinDistance(String query,String entry)
+    public   static int  calculateLevenshteinDistance(String query,String entry)
     {
         int queryLength=query.length();
         int entryLength=entry.length();
