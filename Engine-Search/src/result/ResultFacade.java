@@ -1,11 +1,16 @@
 package result;
-
 public class ResultFacade {
     private Result result;
-    public void calculateLevenshteinDistanceAndPercentage(String query,String entry)
+    public ResultFacade(String title)
     {
-        result.LevenstheinDistanceResult(query,entry);
+        result=new Result(title);
+    }
+    
+    public Result calculateLevenshteinDistanceAndPercentage(String query,String entry)
+    {
+        result.levenstheinDistanceResult(query,entry);
         result.similarityPercentageResult(query,entry);
+        return result;
     }
     
 }
