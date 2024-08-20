@@ -10,6 +10,10 @@ this.title=title;
 levenstheinDistance=0;
 similarityProcentage=0;
     }
+    public double getSimilarityProcentage()
+    {
+        return similarityProcentage;
+    }
    
     public void LevenstheinDistanceResult(String query,String entry)
     {
@@ -25,6 +29,11 @@ similarityProcentage=0;
      
         return Double.compare(this.similarityProcentage, o.similarityProcentage);
 
+    }
+    @Override
+    public String toString() {
+       
+        return "Title: "+title+"Distance"+levenstheinDistance +" Similarity: "+similarityProcentage;
     }
 
 
