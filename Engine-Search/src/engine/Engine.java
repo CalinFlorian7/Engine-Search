@@ -54,12 +54,12 @@ public void getEngineSearchResult(String query, EntryRegistry entryRegistry) {
   {
 Result result=new Result(entry.getEntryName());
 result.levenstheinDistanceResult(query, entry.getEntryName());
-result.similarityPercentageResult(query, entry.getEntryName());
+result.similarityPercentageResult(query, entry.getEntryName()); 
 resultSet.addResult(result);
   
 
 
-}resultSet.printResultsInReversedOrder();
+}resultSet.printResults();
 }
 
 

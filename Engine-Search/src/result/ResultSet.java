@@ -1,6 +1,6 @@
 package result;
 import java.util.*;
-import utils.PriorityQueueToList;
+import utils.*;
 public class ResultSet {
     private PriorityQueue<Result> queryResults;
     private int numberOfResults;
@@ -29,7 +29,7 @@ public class ResultSet {
             }
         }
     }
-    public void printResultsInReversedOrder()
+    public void printResults()
     {
         if(queryResults.isEmpty())
         {
@@ -39,20 +39,15 @@ public class ResultSet {
      {
         
         List<Result> results = PriorityQueueToList.convertPriorityQueueToList(queryResults);
-        Collections.reverse(results);
-        // for (Result result : results) {
-        //     System.out.println(result.toString());
-        // }
-        // Collections.reverse(results);
-        // for (Result result : results) {
-        //     System.out.println(result.toString());
-     }
+   
+        for (Result result : results) {
+            System.out.println(result.toString());
+        }
+   
+    }
      }
 
-        // while(!queryResults.isEmpty())
-        // {
-        //     System.out.println(queryResults.poll().toString());
-        // }
+      
     }
     
 
