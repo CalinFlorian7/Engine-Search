@@ -10,8 +10,8 @@ public class App {
     public static void main(String[] args) throws Exception {
       
         EntryRegistry entryRegistry = new EntryRegistry();
-        
-        entryRegistry.uploadEntriesFromFile("./data/entries.txt");
+         System.out.println("Current working directory: " + System.getProperty("user.dir"));
+        entryRegistry.uploadEntriesFromFile("Engine-Search\\src\\data\\entries.txt");
         Engine engine = new Engine();
          BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
