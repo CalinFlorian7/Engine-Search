@@ -32,10 +32,7 @@ bufferedReader.close();
         System.out.println("Error in uploading entries from file");
           e.printStackTrace();
       }
-      finally
-      {
-          System.out.println("Entries uploaded successfully");
-      }
+      
       
       
 
