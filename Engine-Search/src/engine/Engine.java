@@ -1,11 +1,14 @@
 package engine;
 
 import java.util.List;
+
+import algorithms.LevenshteinDistance;
 import entry.Entry;
 import result.Result;
 import result.ResultSet;
+import result.ResultTypes;
 import entry.EntryRegistry;
-import result.ResultFacade;
+import result.ResultFactory;
 
 public class Engine {
     
@@ -52,9 +55,9 @@ public void getEngineSearchResult(String query, EntryRegistry entryRegistry) {
         ResultSet resultSet =new ResultSet(10);
   for (Entry entry : entryRegistry.getEntryRegistry())
   {
-Result result=new Result(entry.getEntryName());
-result.levenstheinDistanceResult(query, entry.getEntryName());
-result.similarityPercentageResult(query, entry.getEntryName()); 
+Result result=ResultFactory.createResult(ResultTypes.LEVENSTHEIN_RESULT, entry.getEntryName());
+result.calculateResult(query, entry.getEntryName());
+result.calculateResult(query, entry.getEntryName()); 
 resultSet.addResult(result);
   
 
