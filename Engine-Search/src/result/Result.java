@@ -1,43 +1,28 @@
 package result;
-import algorithms.*;
-public class Result implements Comparable<Result>{
+
+public abstract class Result implements Comparable<Result> {
     private String title;
-    private int levenstheinDistance;
-    private double similarityProcentage;
-    public Result(String title)
-    {
-this.title=title;
-levenstheinDistance=0;
-similarityProcentage=0;
+    private double result;
+    public Result(String title){
+        this.title=title;
+        this.result=0;
     }
-    public double getSimilarityProcentage()
-    {
-        return similarityProcentage;
+    protected void setResult(double result){
+    this.result=result;
     }
-   
-    public void levenstheinDistanceResult(String query,String entry)
+    public String getTitle()
     {
-       this.levenstheinDistance=LevenshteinDistance.calculateLevenshteinDistance(query, entry);
+        return title;
     }
-    public void similarityPercentageResult(String query,String entry)
+    public double getResult()
     {
-        this.similarityProcentage=SimilarityPercentage.calculateSimilarityPercentage(query, entry, levenstheinDistance);
-    }
-
-    @Override
-    public int compareTo(Result o) {
-     
-        return Double.compare(this.similarityProcentage, o.similarityProcentage);
-
+        return result;
     }
     @Override
-    public String toString() {
-       
-        return "Title: "+title+" Distance "+levenstheinDistance +" Similitarity: "+similarityProcentage;
-    }
-
-
-   
-
+    public abstract String toString();
+    @Override
+    public abstract int compareTo(Result other);
+    public abstract double calculateResult(String query,String entry);
+  
     
 }
