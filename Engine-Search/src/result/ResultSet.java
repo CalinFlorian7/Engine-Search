@@ -22,7 +22,7 @@ public class ResultSet {
         }
         else
         {
-            if(queryResults.peek().getSimilarityProcentage()<result.getSimilarityProcentage())
+            if(queryResults.peek().getResult()<result.getResult())
             {
                 queryResults.poll();
                 queryResults.add(result);
