@@ -55,7 +55,7 @@ public void getEngineSearchResult(String query, EntryRegistry entryRegistry) {
         ResultSet resultSet =new ResultSet(10);
   for (Entry entry : entryRegistry.getEntryRegistry())
   {
-Result result=ResultFactory.createResult(ResultTypes.LEVENSTHEIN_RESULT, entry.getEntryName());
+Result result=ResultFactory.createResult(ResultTypes.RELEVANCE_TRESHOLD_RESULT, entry.getEntryName(),0.5,0.2);
 result.calculateResult(query, entry.getEntryName());
 result.calculateResult(query, entry.getEntryName()); 
 resultSet.addResult(result);
