@@ -11,7 +11,8 @@ public class App {
       
         EntryRegistry entryRegistry = new EntryRegistry();
          
-        entryRegistry.uploadEntriesFromFile("Engine-Search\\src\\data\\entries.txt");
+        // entryRegistry.uploadEntriesFromFile("Engine-Search\\src\\data\\entries.txt");
+        entryRegistry.uploadEntriesFromFile("Engine-Search/src/data/test.txt");
         Engine engine = new Engine();
          BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
